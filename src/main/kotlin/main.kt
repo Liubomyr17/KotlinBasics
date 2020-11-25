@@ -1,8 +1,12 @@
+//Comparison operators (==, !=, <, >, <=, >=)
 fun main() {
-var result = 5 + 3
-    val a = 5.0
-    val b = 3
-    var resultDouble : Double
-    resultDouble = a / b
-    print(resultDouble)
+val isEquals = 5 == 3
+    println("isEqual is $isEquals")
+    val isNotEquals = 5!=5;
+    println("isNotEquals is $isNotEquals")
+
+    println("is5Greater3 ${5 > 3}")
+    println("is5LowerEquals3 ${5 <= 3}")
+    println("is5GreaterEqual3 ${5 > 3}")
+
 }
