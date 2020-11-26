@@ -1,15 +1,15 @@
 // "While Loops" Expressions
 fun main() {
-    var x = 1
-    while(x <= 10) {
-        println("$x")
-        x++
+    var x = 100
+    while(x >= 0) {
+        print("$x")
+        x -= 2
     }
     println("\nwhile loop is done!")
-
-    var x1 = 100
-    while(x1 >= 0) {
-        println("$x1")
-        x1 -= 2
-    }
+    x = 1
+    do {
+        print("$x")
+        x++
+    } while (x <= 10)
+    println("\ndo while loop is done!")
 }
