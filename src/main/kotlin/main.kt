@@ -1,26 +1,19 @@
-// "For Loops" Expressions
+// "For Loops" Task
 fun main() {
-    for (num in 1..10) {
-        print("$num")
-        println("__________________")
+    var i = 0
+    while(i <= 10000)
+        do {
+            i = 0
+        } while(i == 9001)
+        println("IT'S OVER 9000")
+    var humidity = "humid"
+    var humidityLevel = 80
+    while(humidity == "humid") {
+        humidityLevel -= 5
+        println("humidity decreased")
+        if (humidityLevel < 60) {
+            humidity = "comfy"
+            println("It's comfy now")
+        }
     }
-
-    for (i in 1 until 10) {
-        print("$i ")
-        println("__________________")
-    }
-
-    for (i in 1.until(10).step(2)) {
-        print("$i ")
-        println("__________________")
-    }
-
-    for (z in 10 downTo 1 step 2) { // Same as - for (z in 10.downTo(1).step(2)
-        print("$z ")
-        println("__________________")
-    }
-
-    for (z in 10.downTo(1).step(2))
-        print("$z ")
-        println("__________________")
 }
