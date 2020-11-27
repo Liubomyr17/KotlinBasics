@@ -1,15 +1,12 @@
-// "While Loops" Expressions
+// "While Loops" String Expressions
 fun main() {
-    var x = 100
-    while(x >= 0) {
-        print("$x")
-        x -= 2
+    var feltTemp = "cold"
+    var roomTemp = 10
+    while (feltTemp == "cold") {
+        roomTemp++;
+        if (roomTemp >= 20) {
+            feltTemp = "comfy"
+            println("it's comfy now")
+        }
     }
-    println("\nwhile loop is done!")
-    x = 1
-    do {
-        print("$x")
-        x++
-    } while (x <= 10)
-    println("\ndo while loop is done!")
 }
