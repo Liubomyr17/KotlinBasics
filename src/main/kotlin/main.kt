@@ -1,14 +1,17 @@
 // Classes And Initializers
 
+var b = 3
 fun main() {
-    var iphone = MobilePhone("iOS", "Apple", "iPhone 12")
-    var galaxyS20 = MobilePhone("Android", "Samsung", "Galaxy S20")
-    var mateXS = MobilePhone("Android", "Huawei", "Mate X S")
+    myFunction(5)
+    b = 5
 }
+// this "a" is a parameter
+fun myFunction(a: Int) {
+/* "a" is a variable
+     var a = a // output should e 5
+     var a = 4 -> output will be 4
+     println("a is $a") */
+    var b = a
+    println("b is $b")
 
-class MobilePhone (osName: String, brand: String, model: String) {
-    // Initializer block
-    init {
-        println("The phone $model from $brand uses $osName as its Operating System")
-    }
 }
