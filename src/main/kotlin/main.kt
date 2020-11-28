@@ -1,13 +1,14 @@
 // Classes And Initializers
 
 fun main() {
-    var mobile = MobilePhone("Android", "Samsung", "Samsung Galaxy S20 Ultra")
+    var iphone = MobilePhone("iOS", "Apple", "iPhone 12")
+    var galaxyS20 = MobilePhone("Android", "Samsung", "Galaxy S20")
+    var mateXS = MobilePhone("Android", "Huawei", "Mate X S")
 }
 
 class MobilePhone (osName: String, brand: String, model: String) {
     // Initializer block
     init {
-        println("Initialized a new Mobile Phone object with " +
-                "osName = $osName, brand = $brand, model = $model")
+        println("The phone $model from $brand uses $osName as its Operating System")
     }
 }
