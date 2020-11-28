@@ -1,16 +1,13 @@
 // Classes And Initializers
 
 fun main() {
-    var liubomyr = Person("Liubomyr", "Panjuta")
-    var john = Person()
-    var johnPeterson = Person(lastName = "Peterson")
+    var mobile = MobilePhone("Android", "Samsung", "Samsung Galaxy S20 Ultra")
 }
 
-class Person (firstName: String = "John", lastName: String = "Doe") {
-
+class MobilePhone (osName: String, brand: String, model: String) {
     // Initializer block
     init {
-        println("Initialized a new Person object with " +
-        "firstName = $firstName and lastName = $lastName")
+        println("Initialized a new Mobile Phone object with " +
+                "osName = $osName, brand = $brand, model = $model")
     }
 }
