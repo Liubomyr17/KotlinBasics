@@ -1,62 +1,55 @@
-// Interfaces
+// Abstract Class
 
 
 fun main() {
-    var audiA3 = Car(200.0,"A3", "Audi")
-    var teslaS = ElectricCar(240.0,"S-Model", "Tesla", 85.0)
-    teslaS.chargerType = "Type2"
-    teslaS.extendRange(200.0)
-
-    //teslaS.drive()
-    teslaS.brake()
-    audiA3.brake()
-    // Polymorphism
-//    audiA3.drive(200.0)
-//    teslaS.drive(200.0)
+    val human = Human("Liubomyr", "Ukraine", 70.0, 28.0)
+    val elephant = Elephant("Rosy", "India", 5400.0, 25.0)
+    human.run()
+    human.breath()
+    elephant.run()
+    elephant.breath()
 }
 
-interface Drivable {
-    val maxSpeed: Double
-    fun drive(): String
-    fun brake() {
-        println("The drivable is braking")
-    }
-}
+abstract class Mammal(private val name: String, private val origin: String,
+private val weight: Double) {
+    // Abstract Property (Must be overridden by Subclasses)
+    abstract var maxSpeed: Double
+    // Abstract Methods (Must be implemented by Subclasses)
+    abstract fun run()
+    abstract fun breath()
 
-open class Car(override val maxSpeed: Double,
-               val name: String, val brand: String): Drivable {
-
-open var range: Double = 0.0
-
-    fun extendRange(amount: Double) {
-        if (amount > 0)
-            range += amount
-    }
-    open fun drive(distance: Double) {
-        println("Drive for $distance km")
-    }
-
-    // override fun drive(): String = "driving the interface drive"
-        override fun drive(): String {
-        return "driving the interface drive"
+    // Concrete (Non Abstract) Method
+    fun displayDetails() {
+        println("Name: $name, Origin: $origin, Weight: $weight, " +
+        "Max Speed: $maxSpeed")
     }
 }
 
-// class Car is a sub class of class Car
-class ElectricCar(maxSpeed: Double, name: String, brand: String, batteryLife: Double)
-    : Car(maxSpeed, name, brand) {
+class Human(name: String, origin: String, weight: Double,
+override var maxSpeed: Double): Mammal(name, origin, weight) {
 
-    var chargerType = "Type1"
-    override var range = batteryLife * 6
-    override fun drive(distance: Double) {
-        println("Drive for $distance km on electricity")
+    override fun run() {
+        // code to run
+        println("Runs on two legs")
     }
-       override fun drive(): String {
-           return "Drive for $range km on electricity"
-       }
 
-    override fun brake() {
-        super.brake()
-        println("brake inside the electric car")
+    override fun breath() {
+        // Code to breath
+        println("Breath through mouth or nose")
     }
 }
+
+class Elephant(name: String, origin: String, weight: Double,
+            override var maxSpeed: Double): Mammal(name, origin, weight) {
+
+    override fun run() {
+        // code to run
+        println("Runs on four legs")
+    }
+
+    override fun breath() {
+        // Code to breath
+        println("Breath through mouth, something else or nose")
+    }
+}
+
