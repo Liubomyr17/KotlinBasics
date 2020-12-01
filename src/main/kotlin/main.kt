@@ -1,18 +1,19 @@
-// Data Class Task Solution
+// Inheritance 1
 
 
 fun main() {
-    val iphone = MobilePhone("iOS", "Apple", "iPhone 12")
-    val galaxyS20 = MobilePhone("Android", "Samsung", "Galaxy S20")
-    val mateXS = MobilePhone("Android", "Huawei", "Mate X S")
+
 }
-class MobilePhone(osName: String, brand: String, model: String) {
-    private var battery = 30
-    init {
-        println("The phone $model from $brand uses $osName, as its Operation System")
-    }
-    fun chargeBattery(chargedBy: Int) {
-        println("Battery was at $battery and is at ${battery+chargedBy} now")
-        battery+=chargedBy
-    }
+// class Vehicle is a super class or a parent class or base class
+open class Vehicle {
+    // properties
+    // methods
+}
+// class Car is a sub class of class vehicle
+open class Car : Vehicle() {
+
+}
+// class Car is a sub class of class Car
+class ElectricCar: Car() {
+
 }
