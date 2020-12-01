@@ -1,31 +1,24 @@
-// Getters and Setters
+// Data Class
+
+data class User(val id: Long, var name: String)
 
 fun main() {
-var myCar = Car()
-    println("Brand is : ${myCar.myBrand}")
-    myCar.maxSpeed = -5
-    println("Max speed is ${myCar.maxSpeed}")
-    println("Model is ${myCar.myModel}")
-}
-class Car() {
-   lateinit var owner : String
+    val user1 = User(1, "Liubomyr")
 
-   val myBrand : String = "BMW"
-       // Custom getter
-    get() {
-        return field.toLowerCase()
-    }
-    var maxSpeed : Int = 250
-    get() = field
-    set(value) {
-        field = if(value > 0) value else throw IllegalArgumentException("Max speed cannot be less than 0")
-    }
+    user1.name = "Michael"
+    val user2 = User(1, "Michael")
+    println(user1 == user2)
 
-    var myModel : String = "M5"
-    private set
+    println("User Details: $user1")
 
-    init {
-        this.myModel = "M3"
-        this.owner = "Frank"
-    }
+    val updatedUser = user1.copy(name = "Liubomyr Izdepskyi")
+    println(user1)
+    println(updatedUser)
+
+    println(updatedUser.component1())
+    println(updatedUser.component2())
+
+    val (id, name) = updatedUser
+    println("id=$id, name = $name")
+
 }
