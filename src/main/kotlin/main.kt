@@ -1,24 +1,18 @@
-// Data Class
+// Data Class Task Solution
 
-data class User(val id: Long, var name: String)
 
 fun main() {
-    val user1 = User(1, "Liubomyr")
-
-    user1.name = "Michael"
-    val user2 = User(1, "Michael")
-    println(user1 == user2)
-
-    println("User Details: $user1")
-
-    val updatedUser = user1.copy(name = "Liubomyr Izdepskyi")
-    println(user1)
-    println(updatedUser)
-
-    println(updatedUser.component1())
-    println(updatedUser.component2())
-
-    val (id, name) = updatedUser
-    println("id=$id, name = $name")
-
+    val iphone = MobilePhone("iOS", "Apple", "iPhone 12")
+    val galaxyS20 = MobilePhone("Android", "Samsung", "Galaxy S20")
+    val mateXS = MobilePhone("Android", "Huawei", "Mate X S")
+}
+class MobilePhone(osName: String, brand: String, model: String) {
+    private var battery = 30
+    init {
+        println("The phone $model from $brand uses $osName, as its Operation System")
+    }
+    fun chargeBattery(chargedBy: Int) {
+        println("Battery was at $battery and is at ${battery+chargedBy} now")
+        battery+=chargedBy
+    }
 }
