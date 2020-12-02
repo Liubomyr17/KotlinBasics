@@ -2,54 +2,52 @@
 
 
 fun main() {
-    val human = Human("Liubomyr", "Ukraine", 70.0, 28.0)
-    val elephant = Elephant("Rosy", "India", 5400.0, 25.0)
-    human.run()
-    human.breath()
-    elephant.run()
-    elephant.breath()
+    val stringList: List<String> = listOf(
+        "Denis", "Frank", "Michael", "Harry")
+    val mixedTypeList: List<Any> = listOf(
+        "Denis", 31, 5, "BDay", 70.5, "weights", "kg")
+    for (value in mixedTypeList) {
+        if (value is Int) {
+            println("Integer: '$value'")
+        } else if (value is Double) {
+            println("Double: '$value' with Floor value ${Math.floor(value)}")
+        } else if (value is String) {
+            println("String: '$value' of length ${value.length}")
+        } else {
+            println("Unknown Type")
+        }
+    }
+    // Alternatively
+    for (value in mixedTypeList) {
+        when(value) {
+            is Int -> println("Integer: $value")
+            is Double -> println("Double: $value with Floor value ${Math.floor(value)}")
+            is String -> println("String: '$value' of length ${value.length} ")
+            else -> println("Unknown Type")
+        }
+    }
+    // Smart Type
+    val obj1: Any = "I have a dream"
+    if(obj1 !is String) {
+        println("Not a String")
+    } else {
+        // obj is automatically cast to a String in this scope
+        println("Found a String of length ${obj1.length}")
+    }
+    // Explicit (unsafe) casting using "as" keyword - can go wrong
+    var str1: String = obj1 as String
+    println(str1.length)
+
+    val obj2: Any = 1337
+    //val str2: String? = obj2 as? String
+    //println(str2)
+
+    // Explicit (safe) casting using "as?" keyword
+    val obj3: Any = 1337
+    val str3: String? = obj3 as? String // Works
+    println(str3) // prints null
+
 }
 
-abstract class Mammal(private val name: String, private val origin: String,
-private val weight: Double) {
-    // Abstract Property (Must be overridden by Subclasses)
-    abstract var maxSpeed: Double
-    // Abstract Methods (Must be implemented by Subclasses)
-    abstract fun run()
-    abstract fun breath()
 
-    // Concrete (Non Abstract) Method
-    fun displayDetails() {
-        println("Name: $name, Origin: $origin, Weight: $weight, " +
-        "Max Speed: $maxSpeed")
-    }
-}
-
-class Human(name: String, origin: String, weight: Double,
-override var maxSpeed: Double): Mammal(name, origin, weight) {
-
-    override fun run() {
-        // code to run
-        println("Runs on two legs")
-    }
-
-    override fun breath() {
-        // Code to breath
-        println("Breath through mouth or nose")
-    }
-}
-
-class Elephant(name: String, origin: String, weight: Double,
-            override var maxSpeed: Double): Mammal(name, origin, weight) {
-
-    override fun run() {
-        // code to run
-        println("Runs on four legs")
-    }
-
-    override fun breath() {
-        // Code to breath
-        println("Breath through mouth, something else or nose")
-    }
-}
 
