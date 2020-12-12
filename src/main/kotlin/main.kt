@@ -1,8 +1,10 @@
-// Internal Modifier
+// Protected Modifier
 
-//internal class Example {
-//    internal val x = 1
-//    internal fun getValue() {}
+//open class Example {
+//    protected val x = 1
+//    class Derived : Base() {
+//    fun getValue() : Int {
+//    return i}
 //}
-//internal val y = 10
+
 
