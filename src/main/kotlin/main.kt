@@ -1,7 +1,8 @@
-// Public Modifier
+// Internal Modifier
 
-//private class Example {
-//    private val x = 1
-//    private doSomething() {}
+//internal class Example {
+//    internal val x = 1
+//    internal fun getValue() {}
 //}
+//internal val y = 10
 
