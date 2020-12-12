@@ -1,10 +1,7 @@
-// Lambdas 3
+// Public Modifier
 
-fun main() {
-    println(sum(10, 5))
-    sum1(10, 5)
-}
-val sum: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
+//private class Example {
+//    private val x = 1
+//    private doSomething() {}
+//}
 
-// shorter
-val sum1 = {a: Int, b: Int -> println(a + b)}
