@@ -1,12 +1,10 @@
-// Lambdas 2
+// Lambdas 3
 
 fun main() {
-    val result1 = sum1(2, 3)
-    println("The sum of two numbers is: $result1")
+    println(sum(10, 5))
+    sum1(10, 5)
 }
-val sum1 = { a: Int, b: Int -> 
-    val num = a + b
-    num.toString() // convert Integer to String
-    // (Int, Int) -> String
-}
+val sum: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
 
+// shorter
+val sum1 = {a: Int, b: Int -> println(a + b)}
