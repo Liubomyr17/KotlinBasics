@@ -1,21 +1,21 @@
-// Examples
+// Nested class
 
-open class Base() {
-    var a = 1 // public by default
-    private var b = 2 // private to Base class
-    protected open val c = 3 // visible to the Base and the Derived class
-    internal val d = 4 // visible inside the same module
-    protected fun e() {} // visible to the Base and the Derived class
-}
-class Derived: Base() {
-    // a, c, d,  and e() of the Base class are visible
-    // b is not visible
-    override val c = 9
-}
 fun main() {
-    val base = Base()
-    // base.a and base.b are visible
-    // base.b, base.c and base.e() are not visible
-    val derived = Derived()
-    // derived.c is not visible
+// nested class must be initialized
+    println(OuterClass.NestedClass().description) // accessing property
+    val obj = OuterClass.NestedClass() // object creation
+    obj.foo() // access member function
+}
+
+class OuterClass {
+    private var name: String = "Mr X"
+
+    class NestedClass {
+        var description: String = "code inside nested class"
+        private var id: Int = 101
+        fun foo() {
+            // print("name is ${name}) // cannot access the outer class memeber
+            println("Id is $id")
+        }
+    }
 }
