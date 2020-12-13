@@ -1,20 +1,19 @@
 // Nested class
 
 fun main() {
-// nested class must be initialized
-    println(OuterClass.NestedClass().description) // accessing property
-    val obj = OuterClass.NestedClass() // object creation
-    obj.foo() // access member function
+println(OuterClass().InnerClass().description) // accessing property
+    var obj = OuterClass().InnerClass() // object creating
+    obj.foo()
 }
 
 class OuterClass {
     private var name: String = "Mr X"
 
-    class NestedClass {
+    inner class InnerClass {
         var description: String = "code inside nested class"
         private var id: Int = 101
         fun foo() {
-            // print("name is ${name}) // cannot access the outer class memeber
+            println("name is $name") // can access the outer class member
             println("Id is $id")
         }
     }
