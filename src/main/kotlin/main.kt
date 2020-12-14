@@ -1,15 +1,14 @@
 import java.lang.ArithmeticException
 
-// Example with Finally try-catch block
+// Throw example
 
 fun main() {
-try {
-    val data = 10 / 5
-    println(data)
-} catch (e: NullPointerException) {
-    println(e)
-} finally {
-    println("Finally block always executes")
+validate(15) // Another function
+    println("Code after validation check...")
 }
-    println("Below code...")
+fun validate(age: Int) {
+    if (age < 18)
+        throw ArithmeticException("Under age")
+    else
+        println("Eligible for drive")
 }
