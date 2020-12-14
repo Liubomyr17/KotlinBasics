@@ -1,20 +1,15 @@
-// Nested class
+import java.lang.ArithmeticException
+
+// Example without exception handing
 
 fun main() {
-println(OuterClass().InnerClass().description) // accessing property
-    var obj = OuterClass().InnerClass() // object creating
-    obj.foo()
+println(str)
 }
-
-class OuterClass {
-    private var name: String = "Mr X"
-
-    inner class InnerClass {
-        var description: String = "code inside nested class"
-        private var id: Int = 101
-        fun foo() {
-            println("name is $name") // can access the outer class member
-            println("Id is $id")
-        }
+val str = getNumber("10") // The variable 'str' is getting the int value of "10"
+fun getNumber(str: String): Int {
+    return try {
+        Integer.parseInt(str)
+    } catch (e: ArithmeticException) {
+        0
     }
 }
