@@ -1,15 +1,17 @@
 import java.lang.ArithmeticException
 
-// Example without exception handing
+// Example with try-catch block
 
 fun main() {
-println(str)
+try {
+    val a = IntArray(5)
+    a[5] = 10 / 0
+} catch (e: ArithmeticException) {
+    println("arithmetic exception catch")
+} catch (e: ArrayIndexOutOfBoundsException) {
+    println("array index out of bounds exception")
+} catch (e: Exception) {
+    println("parent exception class")
 }
-val str = getNumber("10") // The variable 'str' is getting the int value of "10"
-fun getNumber(str: String): Int {
-    return try {
-        Integer.parseInt(str)
-    } catch (e: ArithmeticException) {
-        0
-    }
+    println("Code after try catch...")
 }
